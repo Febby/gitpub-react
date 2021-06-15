@@ -1,6 +1,6 @@
 # GitPub React!
 
-This project uses Tailwind & React to build the interface and GitHub API that enable the user to search and view other public user info.
+This project uses Tailwind & React to build the interface/interaction and GitHub API that enable the user to search and view other public user info.
 
 View the project [here](https://febby.github.io/gitpub-react/)
 
