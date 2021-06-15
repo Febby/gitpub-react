@@ -1,3 +1,9 @@
+# GitPub React!
+
+This project uses Tailwind & React to build the interface and GitHub API that enable the user to search and view other public user info.
+
+View the project [here](https://febby.github.io/gitpub-react/)
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
