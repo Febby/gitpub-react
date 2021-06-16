@@ -4,12 +4,27 @@ import axios from 'axios';
 const Form = (props) => {
   const [username, setUsername] = useState('');
 
-  const handleSubmit = (event) => {
+  const handleSubmit = async function (event) {
     event.preventDefault();
-    axios.get(`https://api.github.com/users/${username}`).then((resp) => {
-      console.table(resp.data);
-      setUsername('');
-    });
+
+    let response = '';
+    try {
+      response = await axios.get(`https://api.github.com/users/${username}`);
+    } catch (error) {
+      if (404 === error.response.status) {
+        alert('Username not found');
+      } else {
+        alert('Error');
+        console.table(error.response);
+      }
+    }
+
+    if (response) {
+      axios.get(`https://api.github.com/users/${username}`).then((resp) => {
+        props.onSubmit(resp.data);
+        setUsername('');
+      });
+    }
   };
 
   return (
